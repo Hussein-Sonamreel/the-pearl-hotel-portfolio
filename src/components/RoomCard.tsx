@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
-// Define the properties (props) that each card will accept
+// This interface is now correct, expecting 'price' as a number.
 interface RoomCardProps {
   imageUrl: string;
   title: string;
@@ -43,9 +43,14 @@ const RoomCard: React.FC<RoomCardProps> = ({ imageUrl, title, description, price
         <h3 className="text-2xl mb-2">{title}</h3>
         <p className="text-gray-400 text-base mb-4 h-16">{description}</p>
         <div className="flex justify-between items-center mt-4">
-          <span className="text-xl font-semibold text-white">${price}
+          
+          {/* --- THIS IS THE CORRECTED PRICE DISPLAY --- */}
+          <span className="text-xl font-semibold text-white">
+            KES {new Intl.NumberFormat('en-US').format(price)}
             <span className="text-sm font-light text-gray-400"> / night</span>
           </span>
+          {/* --- END OF FIX --- */}
+
         </div>
       </div>
       

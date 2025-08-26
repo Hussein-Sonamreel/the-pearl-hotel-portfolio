@@ -10,15 +10,33 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 // --- Image Data: Keep your content clean and organized ---
+// --- A Curated Showcase of The Pearl's East African Aesthetic ---
 const galleryImages = [
-  { src: '/gallery-1.jpg', alt: 'A beautifully designed hotel room with a view' },
-  { src: '/gallery-2.jpg', alt: 'Gourmet dish served at the hotel restaurant' },
-  { src: '/gallery-3.jpg', alt: 'The tranquil hotel spa and relaxation area' },
-  { src: '/gallery-4.jpg', alt: 'Close-up of a craft cocktail on the bar' },
-  { src: '/gallery-5.jpg', alt: 'The hotel infinity pool at sunset' },
-  { src: '/gallery-6.jpg', alt: 'A luxurious bathroom with a stone bathtub' },
+  { 
+    src: '/gallery-1.jpg', // Path updated
+    alt: 'Intricate hand-carved details of a Zanzibari four-poster bed in the Swahili Suite' 
+  },
+  { 
+    src: '/gallery-2.jpg', // Path updated
+    alt: 'Guests enjoying a traditional Boma-style dinner under the stars' 
+  },
+  { 
+    src: '/gallery-3.jpg', // Path updated
+    alt: 'Private plunge pool of an Oceanfront Villa overlooking the Indian Ocean' 
+  },
+  { 
+    src: '/gallery-4.jpg', // Path updated
+    alt: 'Artisan cocktails served on the rooftop terrace at sunset' 
+  },
+  { 
+    src: '/gallery-5.jpg', // Path updated
+    alt: 'Maasai-inspired decor and woven textiles in the Safari Suite' 
+  },
+  { 
+    src: '/gallery-6.jpg', // Path updated
+    alt: 'A beautifully plated East African fusion dish at the signature restaurant' 
+  },
 ];
-
 const Gallery = () => {
   // State to manage the lightbox (which image is open, or if it's closed)
   const [open, setOpen] = useState(false);

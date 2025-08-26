@@ -21,8 +21,8 @@ const About = () => {
           {/* Image Column */}
           <motion.div className="md:w-1/2" variants={imageVariants}>
             <Image
-              src="/about-image.jpg"
-              alt="Comfortable and luxurious interior of a hotel suite at The Pearl"
+              src="/swahili-decor.jpg" // <-- YOUR NEW IMAGE PATH
+              alt="Artisanal interior decor at The Pearl hotel"
               width={600}
               height={400}
               className="rounded-lg shadow-2xl"
@@ -32,14 +32,13 @@ const About = () => {
           {/* Text Content Column */}
           <motion.div className="md:w-1/2 text-center md:text-left" variants={textVariants}>
             <h2 className="text-4xl md:text-5xl mb-6">
-              Your Personal Sanctuary
+              Crafted from Culture, Designed for Peace.
             </h2>
             <p className="text-lg text-gray-400 mb-4">
-              At The Pearl, we believe true luxury is found in tranquility and personalized care. Our philosophy is simple: to create an environment that feels like a private residence, where every detail is considered and every need is anticipated.
+              The Pearl is more than a hotel—it is a story. Born from a love for East African heritage, every detail is hand-picked, from the intricately carved Zanzibari doors to the soft, hand-woven textiles in every suite.
             </p>
             <p className="text-lg text-gray-400">
-              {/* THIS IS THE FIX: "we've" is now "we&apos;ve" */}
-              Inspired by the elegance of nature and the warmth of world-class hospitality, we&apos;ve designed an escape that allows you to disconnect from the world and reconnect with yourself.
+              Our philosophy blends the warmth of traditional African hospitality with the precision of modern luxury. We have created a sanctuary where you can disconnect from the world and reconnect with the timeless rhythms of nature and culture.
             </p>
           </motion.div>
         </motion.div>

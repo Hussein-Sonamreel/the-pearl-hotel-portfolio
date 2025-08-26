@@ -28,12 +28,17 @@ const Hero = () => {
         
         <motion.h1 
           className="text-5xl md:text-7xl mb-4 leading-tight"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          // ... animation props
         >
-          Experience Tranquility, Redefined.
+          Where Heritage Meets the Horizon.
         </motion.h1>
+
+        <motion.p 
+          className="text-lg md:text-xl mb-8 max-w-2xl mx-auto"
+          // ... animation props
+        >
+          Welcome to The Pearl by Hussein, an East African boutique sanctuary where Swahili elegance and barefoot luxury invite you to find your peace.
+        </motion.p>
 
         <motion.p 
           className="text-lg md:text-xl mb-8 max-w-2xl mx-auto"
@@ -41,9 +46,16 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
-          Welcome to The Pearl, where luxury service meets serene landscapes. Your escape from the ordinary awaits.
+         Luxury service meets serene landscapes. 
+         
+         
         </motion.p>
-        
+        <motion.p 
+          className="text-lg md:text-xl mb-8 max-w-2xl mx-auto"
+          // ... animation props
+        >
+          Your escape from the ordinary awaits.
+        </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

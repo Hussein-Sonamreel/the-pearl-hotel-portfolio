@@ -5,25 +5,26 @@ import RoomCard from './RoomCard';
 
 const featuredRoomsData = [
   // ... your room data remains the same ...
-  {
-    imageUrl: '/room-1.jpg',
-    title: 'Ocean View Suite',
-    description: 'Wake up to the sound of waves in this spacious and elegant suite.',
-    price: 450,
+ {
+    imageUrl: '/swahili1.jpg', // Assuming this is a shot of the Swahili Suite
+    title: 'Swahili-Inspired Suite',
+    description: 'Experience coastal heritage in this exquisite suite, featuring a hand-carved Zanzibari four-poster bed.',
+    price: 45000, // Price in KES
   },
   {
-    imageUrl: '/room-2.jpg',
-    title: 'Forest Retreat Villa',
-    description: 'A private villa nestled in nature, offering ultimate peace and seclusion.',
-    price: 620,
+    imageUrl: '/Safari Suite.jpg', // Assuming this is a shot of the Safari Suite
+    title: 'Safari Suite',
+    description: 'An adventurous yet luxurious escape with leather & canvas decor and authentic Maasai beadwork.',
+    price: 62000, // Price in KES
   },
   {
-    imageUrl: '/room-3.jpg',
-    title: 'The Pearl Penthouse',
-    description: 'The pinnacle of luxury with panoramic views and exclusive amenities.',
-    price: 1200,
+    imageUrl: '/ocenfront.jpg', // Assuming this is a shot of the Ocean Villa
+    title: 'Oceanfront Villa',
+    description: 'The pinnacle of barefoot luxury. This private villa offers direct beach access and a personal plunge pool.',
+    price: 85000, // Price in KES
   },
 ];
+
 
 const FeaturedRooms = () => {
     const containerVariants: Variants = {
