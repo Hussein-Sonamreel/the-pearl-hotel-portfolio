@@ -1,6 +1,7 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["postgresqlExtensions"]
+  provider      = "prisma-client-js"
+  // THIS LINE IS THE FIX
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
 }
 
 datasource db {
