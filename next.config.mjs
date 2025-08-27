@@ -1,7 +1,14 @@
-// next.config.mjs
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // We can add configuration here later if we need it.
-  // For now, it should be empty.
+  images: {
+    // The 'remotePatterns' key was missing.
+    // It should be an array of objects.
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+      },
+    ],
+  },
 };
 export default nextConfig;

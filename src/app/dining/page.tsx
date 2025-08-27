@@ -1,48 +1,38 @@
-// src/app/dining/page.tsx
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
-import Accordion from "@/components/Accordion";
+import DiningConceptCard from "@/components/DiningConceptCard";
+import { prisma } from "@/lib/prisma";  // Import from the new singleton file
 
-export default function DiningPage() {
+export default async function DiningPage() {
+  const diningConcepts = await prisma.diningConcept.findMany({
+    include: {
+      menuItems: true,
+    },
+  });
+
   return (
     <main>
       <Navbar />
       <PageHeader
-        title="Dining at The Pearl"
-        subtitle="A culinary journey that celebrates the finest local ingredients and international flavors."
+        title="Our Culinary Experiences"
+        subtitle="Dining at The Pearl blends Swahili heritage with global influences, creating unforgettable moments."
       />
-
       <section className="pb-24">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            
-            <Accordion title="Appetizers">
-              <div className="space-y-4 text-gray-400">
-                <p><strong>Seared Scallops:</strong> With saffron risotto and a lemon-butter sauce.</p>
-                <p><strong>Wagyu Beef Carpaccio:</strong> Thinly sliced, with arugula, parmesan, and truffle oil.</p>
-              </div>
-            </Accordion>
-
-            <Accordion title="Main Courses">
-              <div className="space-y-4 text-gray-400">
-                <p><strong>Pan-Seared Duck Breast:</strong> Served with a cherry reduction, on a bed of wild rice.</p>
-                <p><strong>Lobster Thermidor:</strong> A classic preparation with a creamy, rich sauce.</p>
-                <p><strong>Mushroom & Truffle Tagliatelle:</strong> Hand-made pasta with a decadent cream sauce.</p>
-              </div>
-            </Accordion>
-
-            <Accordion title="Desserts">
-              <div className="space-y-4 text-gray-400">
-                <p><strong>Deconstructed Tiramisu:</strong> An elegant twist on the classic Italian dessert.</p>
-                <p><strong>Molten Chocolate Lava Cake:</strong> With a scoop of vanilla bean ice cream.</p>
-              </div>
-            </Accordion>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            {diningConcepts.map((concept) => (
+              <DiningConceptCard
+                key={concept.id}
+                imageUrl={concept.imageUrl}
+                title={concept.title}
+                description={concept.description}
+                menuHighlights={concept.menuItems.map(item => item.name)}
+              />
+            ))}
           </div>
         </div>
       </section>
-
       <Footer />
     </main>
   );
