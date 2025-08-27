@@ -6,6 +6,18 @@ import Footer from '@/components/Footer';
 
 const prisma = new PrismaClient();
 
+// --- THIS IS THE NEW FUNCTION THAT FIXES THE BUILD ERROR ---
+export async function generateStaticParams() {
+  const rooms = await prisma.room.findMany({ select: { slug: true } });
+  
+  // We return an array of objects, where each object has a 'slug' property
+  // Example: [ { slug: 'swahili-inspired-suite' }, { slug: 'safari-suite' } ]
+  return rooms.map((room) => ({
+    slug: room.slug,
+  }));
+}
+// --- END OF NEW FUNCTION ---
+
 async function getRoom(slug: string) {
   const room = await prisma.room.findUnique({ where: { slug: slug } });
   return room;
@@ -15,9 +27,8 @@ export default async function RoomDetailsPage({ params }: { params: { slug: stri
   const room = await getRoom(params.slug);
 
   if (!room) {
-    return (
-      <main><Navbar /><div className="min-h-screen flex items-center justify-center"><h1>Room not found.</h1></div><Footer /></main>
-    );
+    // This is a good fallback, though generateStaticParams should prevent this
+    return <div>Room not found.</div>;
   }
 
   return (
